@@ -1,1 +1,712 @@
-# RAMDAN-
+
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>أضواء زينة رمضان نجوم وهلال - 2 متر</title>
+  <meta name="description" content="Landing Page احترافية لمنتج أضواء زينة رمضان نجوم وهلال بطول 2 متر. عداد تنازلي + عروض + CTA ثابت." />
+
+  <style>
+    :root{
+      --bg:#070a12;
+      --card:#0f1628;
+      --card2:#0b1222;
+      --text:#f7f9ff;
+      --muted:#b7c0d8;
+      --line:rgba(255,255,255,.10);
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --radius:18px;
+
+      --gold1:#ffd36b;
+      --gold2:#ffb84d;
+      --ok:#3be29b;
+      --danger:#ff5c77;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Tahoma, Arial, "Noto Kufi Arabic", "Noto Sans Arabic", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 70% -20%, rgba(255,211,107,.24), transparent 55%),
+        radial-gradient(900px 500px at 10% 10%, rgba(115,184,255,.16), transparent 55%),
+        radial-gradient(700px 400px at 85% 60%, rgba(59,226,155,.10), transparent 55%),
+        var(--bg);
+      line-height:1.7;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:18px}
+
+    /* Top bar */
+    .topbar{
+      position:sticky; top:0; z-index:60;
+      backdrop-filter: blur(12px);
+      background: rgba(7,10,18,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .logo{
+      display:flex; align-items:center; gap:10px;
+      font-weight:900; letter-spacing:.2px;
+    }
+    .chip{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      color:#1a1202;
+      background:linear-gradient(135deg,var(--gold1),var(--gold2));
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .nav{
+      display:flex; gap:10px; flex-wrap:wrap;
+      justify-content:center;
+    }
+    .nav a{
+      font-size:13px; color:var(--muted);
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+    }
+    .nav a:hover{border-color: rgba(255,211,107,.35); color:var(--text)}
+    .btn{
+      border:0; cursor:pointer;
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:12px 16px; border-radius:999px;
+      font-weight:900;
+      color:#1a1202;
+      background:linear-gradient(135deg,var(--gold1),var(--gold2));
+      box-shadow: 0 14px 30px rgba(255,211,107,.16);
+      transition: transform .08s ease;
+    }
+    .btn:active{transform: translateY(1px)}
+    .btn.secondary{
+      color:var(--text);
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:none;
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:16px;
+      margin-top:16px;
+      align-items:stretch;
+    }
+    @media (max-width: 920px){ .hero{grid-template-columns:1fr;}}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.09);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-left{padding:18px}
+    .kicker{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      font-size:13px; color:var(--muted);
+    }
+    .pill{
+      padding:7px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    .title{
+      margin:10px 0 8px;
+      font-size:38px;
+      line-height:1.15;
+      letter-spacing:.2px;
+    }
+    @media (max-width: 520px){ .title{font-size:30px}}
+    .subtitle{
+      margin:0 0 12px;
+      color:var(--muted);
+      font-size:15px;
+    }
+    .bullets{display:grid; gap:10px; margin:12px 0 14px}
+    .bullet{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:10px 12px;
+      border-radius:16px;
+      background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.07);
+    }
+    .check{
+      width:18px; height:18px; border-radius:50%;
+      background: rgba(59,226,155,.16);
+      border:1px solid rgba(59,226,155,.50);
+      flex:0 0 auto;
+      display:flex; align-items:center; justify-content:center;
+      margin-top:2px;
+    }
+    .check:before{content:"✓"; font-weight:900; color:var(--ok); font-size:12px}
+    .hero-cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px}
+    .micro{
+      margin-top:12px;
+      color:rgba(255,255,255,.65);
+      font-size:12.5px;
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+
+    /* Right column */
+    .hero-right{padding:14px; display:grid; gap:12px}
+
+    .countdown{
+      padding:14px;
+      border-radius:18px;
+      border:1px solid rgba(255,211,107,.30);
+      background: linear-gradient(180deg, rgba(255,211,107,.14), rgba(255,255,255,.03));
+      box-shadow: 0 18px 40px rgba(255,211,107,.08);
+      text-align:right;
+    }
+    .countdown .row{
+      display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    }
+    .countdown h3{margin:0; font-size:16px}
+    .countdown .hint{color:rgba(255,255,255,.75); font-size:12.5px}
+    .timer{
+      margin-top:10px;
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:10px;
+    }
+    .tbox{
+      background: rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:16px;
+      padding:10px 8px;
+      text-align:center;
+    }
+    .tbox b{display:block; font-size:22px; letter-spacing:.5px}
+    .tbox span{display:block; font-size:12px; color:rgba(255,255,255,.70)}
+    @media (max-width:520px){
+      .timer{grid-template-columns: repeat(2, 1fr);}
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    @media (max-width:520px){ .gallery{grid-template-columns:1fr;}}
+    .ph{
+      min-height:150px;
+      border-radius:16px;
+      border:1px dashed rgba(255,211,107,.35);
+      background: rgba(255,211,107,.06);
+      display:flex; align-items:center; justify-content:center;
+      padding:12px; text-align:center;
+      color:rgba(255,211,107,.90);
+      font-weight:900; font-size:13px;
+    }
+
+    /* Offer box */
+    .offer{padding:14px}
+    .priceRow{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      padding:12px;
+      border-radius:18px;
+      background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.07);
+    }
+    .price{
+      font-size:30px;
+      font-weight:1000;
+      color: var(--gold1);
+    }
+    .old{
+      font-size:13px;
+      color:rgba(255,255,255,.55);
+      text-decoration: line-through;
+      font-weight:800;
+    }
+    .note{font-size:12.5px; color:rgba(255,255,255,.75)}
+    .bundles{display:grid; gap:10px; margin-top:12px}
+    .bundle{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding:12px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.09);
+      background: rgba(15,22,40,.55);
+      cursor:pointer;
+    }
+    .bundle:hover{border-color: rgba(255,211,107,.30)}
+    .bundleLeft{display:flex; gap:10px; align-items:flex-start}
+    .bundle input{accent-color: var(--gold1); margin-top:3px}
+    .bundle strong{display:block; font-size:14px}
+    .bundle small{display:block; color:var(--muted); font-weight:700}
+    .tag{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,211,107,.25);
+      background: rgba(255,211,107,.10);
+      color:var(--gold1);
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    /* Sections */
+    section{padding:14px 0}
+    .sectionHead{
+      display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      margin:8px 0 12px;
+    }
+    .sectionHead h2{margin:0; font-size:20px}
+    .sectionHead span{color:var(--muted); font-size:13px}
+    .grid3{display:grid; grid-template-columns: repeat(3,1fr); gap:12px}
+    @media (max-width:920px){ .grid3{grid-template-columns:1fr}}
+    .feat{padding:14px}
+    .feat h3{margin:0 0 6px; font-size:16px}
+    .feat p{margin:0; color:var(--muted); font-size:14px}
+    .specs{display:grid; gap:10px}
+    .spec{
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      padding:12px;
+      border-radius:18px;
+      background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.07);
+    }
+    .spec b{font-weight:1000}
+    .spec span{color:var(--muted); font-weight:800}
+
+    /* Testimonials */
+    .quotes{display:grid; grid-template-columns: repeat(3,1fr); gap:12px}
+    @media (max-width:920px){ .quotes{grid-template-columns:1fr}}
+    .quote{padding:14px}
+    .quote p{margin:0; color:rgba(255,255,255,.82); font-size:14px}
+    .quote .who{margin-top:10px; color:var(--muted); font-size:12.5px; font-weight:800}
+
+    /* FAQ */
+    .faq{display:grid; gap:10px}
+    details{
+      border-radius:18px;
+      background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.07);
+      padding:12px 14px;
+    }
+    summary{cursor:pointer; font-weight:1000}
+    details p{margin:10px 0 0; color:var(--muted); font-size:14px}
+
+    /* Footer */
+    .footer{
+      padding:18px 0 80px;
+      text-align:center;
+      color:rgba(255,255,255,.50);
+      font-size:12px;
+    }
+
+    /* Sticky CTA */
+    .sticky{
+      position:fixed; bottom:0; left:0; right:0; z-index:70;
+      background: rgba(7,10,18,.78);
+      backdrop-filter: blur(12px);
+      border-top:1px solid var(--line);
+    }
+    .stickyInner{
+      max-width:1100px;
+      margin:0 auto;
+      padding:10px 18px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
+    .mini{
+      display:flex; flex-direction:column; gap:2px;
+    }
+    .mini strong{font-size:13px}
+    .mini span{font-size:12px; color:var(--muted)}
+    .warn{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12.5px;
+      color:rgba(255,255,255,.78);
+      margin-top:10px;
+    }
+    .dotDanger{
+      width:10px; height:10px; border-radius:999px;
+      background: rgba(255,92,119,.22);
+      border:1px solid rgba(255,92,119,.55);
+      display:inline-block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="logo">
+        <span class="chip">🌙 عرض رمضان</span>
+        <span>أضواء نجوم وهلال (2 متر)</span>
+      </div>
+      <div class="nav">
+        <a href="#benefits">المميزات</a>
+        <a href="#offers">العروض</a>
+        <a href="#specs">المواصفات</a>
+        <a href="#faq">الأسئلة</a>
+      </div>
+      <a class="btn" href="https://kifa7i.dukan.shop/products/6de3b1033f6b455aabc383f6a3965d38">اطلب الآن</a>
+    </div>
+  </div>
+
+  <main class="container">
+
+    <!-- HERO -->
+    <div class="hero" id="top">
+      <!-- LEFT -->
+      <div class="card hero-left">
+        <div class="kicker">
+          <span class="pill">✨ ديكور رمضاني فخم</span>
+          <span class="pill">💡 LED دافئ</span>
+          <span class="pill">🧷 تركيب سريع</span>
+          <span class="pill">🏠 للبيت والبلكونة</span>
+        </div>
+
+        <h1 class="title">حوّل بيتك لأجواء رمضان<br/>في ثواني ✨</h1>
+        <p class="subtitle">
+          أضواء زينة <b>نجوم وهلال</b> بطول <b>2 متر</b> بإضاءة دافئة تعطي لمسة روحانية ودفء للصالون، الشرفة، الخيمة الرمضانية أو أي زاوية تحبها.
+        </p>
+
+        <div class="bullets">
+          <div class="bullet"><span class="check"></span><div><b>إضاءة دافئة مريحة للعين</b><div class="note">مناسبة للتجمعات والإفطار والسحور.</div></div></div>
+          <div class="bullet"><span class="check"></span><div><b>طول مثالي 2 متر</b><div class="note">للنوافذ والجدران والطاولات والستائر.</div></div></div>
+          <div class="bullet"><span class="check"></span><div><b>ديكور يبان “غالي” بسعر بسيط</b><div class="note">يوصل إحساس فخم بدون مجهود.</div></div></div>
+        </div>
+
+        <div class="hero-cta">
+          <a class="btn" href="https://kifa7i.dukan.shop/products/6de3b1033f6b455aabc383f6a3965d38">اطلب الآن 🔥</a>
+          <a class="btn secondary" href="#offers">شاهد العروض</a>
+        </div>
+
+        <div class="micro">
+          <span class="pill">🚚 توصيل سريع</span>
+          <span class="pill">✅ منتج مطلوب في رمضان</span>
+          <span class="pill">⭐ مناسب هدية</span>
+        </div>
+
+        <div class="warn">
+          <span class="dotDanger"></span>
+          <span>تنبيه: العرض ينتهي عند انتهاء العداد أو نفاد الكمية.</span>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="hero-right">
+        <!-- COUNTDOWN -->
+        <div class="countdown">
+          <div class="row">
+            <h3>⏳ العرض ينتهي خلال</h3>
+            <div class="hint" id="endsText">ينتهي اليوم</div>
+          </div>
+
+          <div class="timer" aria-label="Countdown">
+            <div class="tbox"><b id="d">00</b><span>أيام</span></div>
+            <div class="tbox"><b id="h">00</b><span>ساعات</span></div>
+            <div class="tbox"><b id="m">00</b><span>دقائق</span></div>
+            <div class="tbox"><b id="s">00</b><span>ثواني</span></div>
+          </div>
+        </div>
+
+        <!-- IMAGES -->
+        <div class="card" style="padding:14px;">
+          <div class="gallery">
+            <!-- ضع صور المنتج بدل هذه الـ placeholders -->
+            <div class="ph"><img src="image-1.jpg" width="230 " height="230"  alt=""></div>
+            <div class="ph"><img src="image-2.jpg" width="230" height="230" alt=""></div>
+            <div class="ph"><img src="image-3.jpg" width="230" height="230" alt=""></div>
+            <div class="ph"><img src="image-4.jpg" width="230" height="230" alt=""></div>
+          </div>
+        </div>
+
+        <!-- OFFER BOX -->
+        <div class="card offer" id="offers">
+          <div class="priceRow">
+            <div>
+              <div class="note">السعر الآن</div>
+              <div class="price" id="priceNow">129</div>
+              <div class="old">بدلًا من <span id="priceOld">169</span></div>
+            </div>
+            <div class="note">
+              🔥 <b>عرض محدود</b><br/>
+              اختر الباقة المناسبة
+            </div>
+          </div>
+
+          <div class="bundles">
+            <label class="bundle">
+              <span class="bundleLeft">
+                <input type="radio" name="bundle" value="1" checked>
+                <span>
+                  <strong>قطعة واحدة</strong>
+                  <small>مناسبة لنافذة أو زاوية واحدة</small>
+                </span>
+              </span>
+              <span class="tag">الأكثر طلبًا</span>
+            </label>
+
+            <label class="bundle">
+              <span class="bundleLeft">
+                <input type="radio" name="bundle" value="2">
+                <span>
+                  <strong>قطعتين (وفر أكثر)</strong>
+                  <small>صالون + بلكونة / غرفتين</small>
+                </span>
+              </span>
+              <span class="tag">وفر 59</span>
+            </label>
+
+            <label class="bundle">
+              <span class="bundleLeft">
+                <input type="radio" name="bundle" value="3">
+                <span>
+                  <strong>3 قطع (أفضل قيمة)</strong>
+                  <small>ديكور كامل للبيت</small>
+                </span>
+              </span>
+              <span class="tag">أفضل قيمة</span>
+            </label>
+          </div>
+
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="https://kifa7i.dukan.shop/products/6de3b1033f6b455aabc383f6a3965d38">
+              أكمل الطلب الآن ✅
+            </a>
+            <a class="btn secondary" href="#benefits">لماذا هذا المنتج؟</a>
+          </div>
+
+          <div class="note" style="margin-top:10px;">
+            * سيتم إتمام الدفع داخل صفحة المنتج في YouCan.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BENEFITS -->
+    <section id="benefits">
+      <div class="sectionHead">
+        <h2>لماذا هذا الديكور يبيع بسرعة؟</h2>
+        <span>تأثير بصري قوي ✨</span>
+      </div>
+
+      <div class="grid3">
+        <div class="card feat">
+          <h3>🌟 تصميم رمضاني أنيق</h3>
+          <p>نجوم وأهلة تعطي إحساس روحاني ودفء، وتطلع “فخمة” في الصور والفيديو.</p>
+        </div>
+        <div class="card feat">
+          <h3>💡 إضاءة LED دافئة</h3>
+          <p>إضاءة مريحة للعين، مناسبة للسهرة والديكور بدون إزعاج.</p>
+        </div>
+        <div class="card feat">
+          <h3>🧷 تركيب سريع</h3>
+          <p>علّقها على نافذة/ستارة/جدار خلال دقائق. مناسبة لأي بيت.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- USE CASES -->
+    <section>
+      <div class="sectionHead">
+        <h2>أين يمكنك استخدامها؟</h2>
+        <span>داخل وخارج البيت</span>
+      </div>
+
+      <div class="grid3">
+        <div class="card feat">
+          <h3>🏠 غرفة المعيشة</h3>
+          <p>خلف الستارة أو فوق الكنبة لأجواء دافئة وجميلة.</p>
+        </div>
+        <div class="card feat">
+          <h3>🌿 البلكونة</h3>
+          <p>حول جلسة الشاي أو الإفطار لتعطي منظر ساحر.</p>
+        </div>
+        <div class="card feat">
+          <h3>🕌 الخيمة الرمضانية</h3>
+          <p>فوق الطاولة أو الحائط لجلسات السحور والإفطار.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:12px; text-align:center;">
+        <a class="btn" href="https://kifa7i.dukan.shop/products/6de3b1033f6b455aabc383f6a3965d38">اطلب الآن 🔥</a>
+      </div>
+    </section>
+
+    <!-- SPECS -->
+    <section id="specs">
+      <div class="sectionHead">
+        <h2>المواصفات</h2>
+        <span>تفاصيل مهمة قبل الشراء</span>
+      </div>
+
+      <div class="specs">
+        <div class="spec"><b>الطول</b><span>2 متر</span></div>
+        <div class="spec"><b>نوع الإضاءة</b><span>LED دافئ</span></div>
+        <div class="spec"><b>التصميم</b><span>نجوم + أهلة</span></div>
+        <div class="spec"><b>الاستخدام</b><span>داخل المنزل وخارجه (حسب الظروف)</span></div>
+        <div class="spec"><b>التركيب</b><span>تعليق سهل (شريط لاصق/خطاف/مشابك)</span></div>
+        <div class="spec"><b>مصدر الطاقة</b><span>USB / كهرباء (حسب المتوفر)</span></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS (اختياري) -->
+    <section>
+      <div class="sectionHead">
+        <h2>آراء الزبائن</h2>
+        <span>ضع تقييمات حقيقية إذا توفرّت</span>
+      </div>
+
+      <div class="quotes">
+        <div class="card quote">
+          <p>“الإضاءة دافئة وكتعطي جو رمضاني زوين بزاف 👌”</p>
+          <div class="who">—زبونة (nsaima)</div>
+        </div>
+        <div class="card quote">
+          <p>“ركبتها فالبلكونة… كتحول المكان كامل ✨”</p>
+          <div class="who">محمد كمال </div>
+        </div>
+        <div class="card quote">
+          <p>“هاد الشي كيبان فخم فالصور، مناسب للإعلان.”</p>
+          <div class="who">احمد الخياط</div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px; text-align:center;">
+        <a class="btn" href="https://kifa7i.dukan.shop/products/6de3b1033f6b455aabc383f6a3965d38">أكمل الطلب الآن ✅</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="sectionHead">
+        <h2>أسئلة شائعة</h2>
+        <span>إجابات سريعة</span>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>هل الإضاءة قوية؟</summary>
+          <p>هي إضاءة دافئة متوسطة مناسبة للديكور والأجواء الليلية بدون إزعاج للعين.</p>
+        </details>
+        <details>
+          <summary>هل تصلح للنافذة والستارة؟</summary>
+          <p>نعم، ممتازة للنوافذ والستائر والجدران. استخدم مشابك أو شريط لاصق.</p>
+        </details>
+        <details>
+          <summary>هل يمكن استخدامها في البلكونة؟</summary>
+          <p>نعم، وتُفضّل حمايتها من المطر الشديد (حسب الموديل).</p>
+        </details>
+        <details>
+          <summary>كيف أكمل الشراء؟</summary>
+          <p>اضغط “اطلب الآن” وستنتقل لصفحة المنتج في YouCan لإتمام الدفع.</p>
+        </details>
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="year"></span> — عدّل الصور والأسعار حسب متجرك.
+    </div>
+  </main>
+
+  <!-- STICKY CTA -->
+  <div class="sticky">
+    <div class="stickyInner">
+      <div class="mini">
+        <strong>أضواء نجوم وهلال (2 متر)</strong>
+        <span>السعر الآن: <b id="stickyPrice">129</b> — العرض ينتهي قريبًا</span>
+      </div>
+      <a class="btn" href="https://kifa7i.youcan.store/products/adoa-zyn-rmdan-aal-shkl-njom-o-hlal-2-mtr">اطلب الآن</a>
+    </div>
+  </div>
+
+  <script>
+    // ===== إعداد رابط المنتج (لا تغيّره إلا إذا تغيّر المنتج) =====
+    const PRODUCT_URL = "https://kifa7i.youcan.store/products/adoa-zyn-rmdan-aal-shkl-njom-o-hlal-2-mtr";
+
+    // ====== عروض الباقات (عدّلها كما تريد) ======
+    const PRICES = {
+      1: { now: 129, old: 169 },
+      2: { now: 199, old: 338 }, // old = 169*2 كمثال
+      3: { now: 279, old: 507 }  // old = 169*3 كمثال
+    };
+
+    const priceNowEl = document.getElementById("priceNow");
+    const priceOldEl = document.getElementById("priceOld");
+    const stickyPriceEl = document.getElementById("stickyPrice");
+
+    function getSelectedBundle(){
+      const r = document.querySelector('input[name="bundle"]:checked');
+      return parseInt(r.value, 10);
+    }
+    function updatePrice(){
+      const b = getSelectedBundle();
+      priceNowEl.textContent = PRICES[b].now;
+      priceOldEl.textContent = PRICES[b].old;
+      stickyPriceEl.textContent = PRICES[b].now;
+    }
+    document.querySelectorAll('input[name="bundle"]').forEach(el=>{
+      el.addEventListener("change", updatePrice);
+    });
+    updatePrice();
+
+    // ====== عداد تنازلي احترافي (48 ساعة من أول زيارة) ======
+    // يحفظ نهاية العرض في localStorage لكل زائر
+    const endsText = document.getElementById("endsText");
+    const dEl = document.getElementById("d");
+    const hEl = document.getElementById("h");
+    const mEl = document.getElementById("m");
+    const sEl = document.getElementById("s");
+
+    const KEY = "ramadan_offer_ends_at_v1";
+    const HOURS = 48;
+
+    function pad(n){ return String(n).padStart(2,"0"); }
+
+    function getOrCreateEndTime(){
+      const saved = localStorage.getItem(KEY);
+      if(saved){
+        const t = parseInt(saved, 10);
+        if(!Number.isNaN(t) && t > Date.now()) return t;
+      }
+      const end = Date.now() + HOURS * 60 * 60 * 1000;
+      localStorage.setItem(KEY, String(end));
+      return end;
+    }
+
+    const endTime = getOrCreateEndTime();
+
+    function tick(){
+      const now = Date.now();
+      let diff = endTime - now;
+
+      if(diff <= 0){
+        diff = 0;
+        endsText.textContent = "انتهى العرض";
+      } else {
+        // عرض تاريخ/وقت النهاية بشكل بسيط
+        const endDate = new Date(endTime);
+        endsText.textContent = "ينتهي: " + endDate.toLocaleString("ar-MA");
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / (24*3600));
+      const hours = Math.floor((totalSeconds % (24*3600)) / 3600);
+      const mins = Math.floor((totalSeconds % 3600) / 60);
+      const secs = totalSeconds % 60;
+
+      dEl.textContent = pad(days);
+      hEl.textContent = pad(hours);
+      mEl.textContent = pad(mins);
+      sEl.textContent = pad(secs);
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
