@@ -415,10 +415,11 @@
         <div class="card" style="padding:14px;">
           <div class="gallery">
             <!-- ضع صور المنتج بدل هذه الـ placeholders -->
-            <div class="ph"><img src="image-1.jpg" width="230 " height="230"  alt=""></div>
+            <div class="ph"><img src="image-8.jpg" width="230 " height="230"  alt=""></div>
             <div class="ph"><img src="image-2.jpg" width="230" height="230" alt=""></div>
             <div class="ph"><img src="image-3.jpg" width="230" height="230" alt=""></div>
             <div class="ph"><img src="image-4.jpg" width="230" height="230" alt=""></div>
+
           </div>
         </div>
 
